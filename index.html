@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Translator • Traduction de Qualité</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h1>LingoPal</h1>
+                <p class="subtitle">Traduction précise et professionnelle </p>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="language-selectors">
+                <div class="language-box">
+                    <label class="language-label" for="source-lang">
+                        <i class="fas fa-search"></i> Langue Source
+                    </label>
+                    <div class="select-wrapper">
+                        <select id="source-lang">
+                            <option value="ar">Arabe</option>
+                            <option value="en">Anglais</option>
+                            <option value="fr">Français</option>
+                            <option value="es">Espagnol</option>
+                            <option value="de">Allemand</option>
+                            <option value="tr">Turc</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="swap-btn" id="swap-btn" title="Échanger les langues">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="language-box">
+                    <label class="language-label" for="target-lang">
+                        <i class="fas fa-flag"></i> Langue Cible
+                    </label>
+                    <div class="select-wrapper">
+                        <select id="target-lang">
+                            <option value="en">Anglais</option>
+                            <option value="fr">Français</option>
+                            <option value="ar">Arabe</option>
+                            <option value="es">Espagnol</option>
+                            <option value="de">Allemand</option>
+                            <option value="tr">Turc</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-areas">
+                <div class="text-box">
+                    <div class="text-header">
+                        <span class="text-label">Texte à traduire</span>
+                    </div>
+                    <textarea id="input-text" placeholder="Saisissez le texte que vous souhaitez traduire..."></textarea>
+                    <div class="char-count"><span id="source-char-count">0</span> caractères</div>
+                </div>
+                
+                <div class="text-box">
+                    <div class="text-header">
+                        <span class="text-label">Traduction</span>
+                    </div>
+                    <textarea id="output-text" placeholder="Le résultat de la traduction apparaîtra ici..." readonly></textarea>
+                    <div class="char-count"><span id="translated-char-count">0</span> caractères</div>
+                </div>
+            </div>
+
+            <div class="loading" id="loading-indicator">
+                <div class="spinner"></div>
+                <p>Traduction en cours...</p>
+            </div>
+
+            <button class="translate-btn" id="translate-btn">
+                 Traduire
+            </button>
+
+            <div class="action-buttons">
+                <button class="action-btn copy-btn" id="copy-btn">
+                    <i class="far fa-copy"></i> Copier le texte
+                </button>
+                <button class="action-btn speak-btn" id="speak-btn">
+                    <i class="fas fa-volume-up"></i> Lecture vocale
+                </button>
+                <button class="action-btn clear-btn" id="clear-btn">
+                    <i class="fas fa-eraser"></i> Effacer tout
+                </button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Traduction sécurisée</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

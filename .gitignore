@@ -1,0 +1,7 @@
+# Ignorer les fichiers système et caches
+AppData/
+*.log
+*.tmp
+*.DS_Store
+__pycache__/
+*.pyc
