@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(`🔍 Traduction: "${text.substring(0, 50)}..." de ${source} vers ${target}`);
             
             // API 1 : LibreTranslate (gratuite et fiable)
-            const response = await fetch('https://libretranslate.com/translate', {
+            const response = await fetch('https://translate.astian.org/translate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,17 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Fallback : API alternative
             try {
-                console.log('🔄 Essai avec API de secours...');
+                // Utilisation uniquement de MyMemory
                 const fallbackResponse = await fetch(
-                    `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${source}|${target}`
+                `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${source}|${target}`
                 );
-                
                 const fallbackData = await fallbackResponse.json();
                 if (fallbackData.responseStatus === 200) {
-                    return fallbackData.responseData.translatedText;
+                return fallbackData.responseData.translatedText;
                 } else {
-                    throw new Error('API de secours a échoué');
+                 throw new Error('API MyMemory a échoué');
                 }
+
             } catch (fallbackError) {
                 console.error('❌ Toutes les APIs ont échoué:', fallbackError);
                 return `🚫 Erreur de traduction. Le service est temporairement indisponible.\n\nEssayez de:\n- Vérifier votre connexion internet\n- Réessayer dans quelques instants\n- Utiliser un texte plus court`;
